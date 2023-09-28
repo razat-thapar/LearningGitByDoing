@@ -1,0 +1,9 @@
+Steps to push local repo changes to remote repo with unrelated histories. 
+1. Create a remote repo on github. 
+2. Add the placeholder say"downstream" in local using
+   git remote add downstream <remote url> <branch name> 
+3. pull the remote repo with unrelated histories flag. 
+   git pull --allow-unrelated-histories <placeholder> <branchname>
+4. push the changes to the remote repo from local. 
+   git push <placeholder> <branchname> 
+5. Done! this way all the changes will be reflected in remote and both will have same histories now. 
