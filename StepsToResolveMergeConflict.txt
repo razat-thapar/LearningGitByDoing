@@ -1,1 +1,1 @@
-Added a new feature<dropdown>.
+Added a new feature<label>.
