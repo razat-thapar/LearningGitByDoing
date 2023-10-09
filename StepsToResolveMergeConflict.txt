@@ -1,1 +1,23 @@
-Added a new feature<button>.
+What is MergeConflict ? 
+Scenario: Two branches , where feat branch is forked at B commit , so, main and feat have common histories. 
+
+Now,reviewers committed some changes in file1.txt at line 1 of main branch. 
+say, "adding a new feature <button>"
+
+Parallely, some developer committed some changes in file1.txt at line1 of feat branch.
+say, "adding a new feature <label>"
+
+    A---B---C(file1.txt) (main)
+        |
+	B---D(file1.txt) (feat)
+now, developer tries to sync his branch (feat) with recent changes in main. 
+> currently on feat branch. 
+> git merge main 
+
+#######Problem:  Merge conflict happens, unable to merge histories until conflicts are resolved manually.
+#######FIX: 
+Option 1: Delete main changes + add new changes of feat branch. 
+Option 2: Delete changes of feat branch. + add new changes of main branch.  
+Option 3: keep both.
+Option 4: Delete both.
+
