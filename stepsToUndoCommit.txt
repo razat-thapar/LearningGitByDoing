@@ -1,3 +1,7 @@
+###########################################################
+# SCENARIO 1: undo changes post wrong commit. 
+###########################################################
+
 1. Hard Undo (rollback to previous commit)
 		      (F)
 		A--B--C
@@ -7,7 +11,9 @@
 	1.1 command to check the commit history.
 		git reflog
 	1.2 execute the following command to hard undo. 
+		
 		git reset --hard HEAD~1
+		
 		This will reset the HEAD pointer by 1 commit back.
 		This will also reset the state of files(F) to 1 commit back.
 		   (F)
@@ -15,6 +21,11 @@
 		   |
 		   |
 		   Head
+		NOTE: To reset hard to multiple commits back. do instead.
+		> get the hashcode of previous good commit using below command. 
+		git reflog 
+                > undo hard to previous good commit. 
+		git reset --hard <hashcode of that commit>
 
 2. Soft Undo (rollback to previous commit + keep the changes in staging area)
 		      (F)
@@ -33,6 +44,10 @@
 		   |
 		   |
 		   Head
+
+		NOTE: To reset soft multiple commits back. 
+		Do. 
+		git reset --soft <hashCode of previous good commit>
 
 ###################DETAILED ANSWER FROM STACKOVERFLOW######################################		   
 Undoing a commit is a little scary if you don't know how it works. But it's actually amazingly easy if you do understand. I'll show you the 4 different ways you can undo a commit.
